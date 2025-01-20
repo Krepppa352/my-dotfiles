@@ -1,0 +1,165 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "arch",
+    "color": {
+      "1": "38;2;158;120;255",
+      "2": "38;2;255;110;240"
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "format": "  \u001b[38;2;158;120;255m \u001b[38;2;255;142;236mUser \u001b[38;2;255;255;255m||> \u001b[38;2;255;142;236m{user-name-colored}{at-symbol-colored}{host-name-colored}",
+      "color": {
+        "user": "38;2;158;158;255",
+        "at": "37;1",
+        "host": "38;2;158;120;255"
+      }
+    },
+    {
+      "type": "custom",
+      "format": "╭───────────────────── Software ────────────────────────╮",
+      "outputColor": "38;2;158;120;255"
+    },
+    {
+      "type": "os",
+      "keyIcon": "\u001b[38;2;158;120;255m├─\u001b[38;2;255;142;236m",
+      "format": "{name} {arch}"
+    },
+    {
+      "type": "kernel",
+      "keyIcon": "\u001b[38;2;158;120;255m├─\u001b[38;2;255;142;236m"
+    },
+    {
+      "type": "uptime",
+      "keyIcon": "\u001b[38;2;158;120;255m├─\u001b[38;2;255;142;236m"
+    },
+    {
+      "type": "packages",
+      "keyIcon": "\u001b[38;2;158;120;255m├─󰏖\u001b[38;2;255;142;236m"
+    },
+    {
+      "type": "shell",
+      "keyIcon": "\u001b[38;2;158;120;255m├─\u001b[38;2;255;142;236m"
+    },
+    {
+      "type": "custom",
+      "format": "╰───────────────────────────────────────────────────────╯",
+      "outputColor": "38;2;158;120;255"
+    },
+    {
+      "type": "custom",
+      "format": "╭───────────────────── Display ─────────────────────────╮",
+      "outputColor": "38;2;158;120;255"
+    },
+    {
+      "type": "display",
+      "key": "{name}",
+      "keyIcon": "\u001b[38;2;158;120;255m├─󰍹\u001b[38;2;255;142;236m",
+      "format": "{width}x{height} @ {refresh-rate} Hz ({inch}\")"
+    },
+    {
+      "type": "wm",
+      "keyIcon": "\u001b[38;2;158;120;255m├─\u001b[38;2;255;142;236m"
+    },
+    {
+      "type": "terminal",
+      "keyIcon": "\u001b[38;2;158;120;255m├─\u001b[38;2;255;142;236m"
+    },
+    {
+      "type": "terminalfont",
+      "keyIcon": "\u001b[38;2;158;120;255m├─\u001b[38;2;255;142;236m"
+    },
+    {
+      "type": "custom",
+      "format": "╰───────────────────────────────────────────────────────╯",
+      "outputColor": "38;2;158;120;255"
+    },
+    {
+      "type": "custom",
+      "format": "╭──────────────────── Hardware ─────────────────────────╮",
+      "outputColor": "38;2;158;120;255"
+    },
+    {
+      "type": "cpu",
+      "keyIcon": "\u001b[38;2;158;120;255m├─\u001b[38;2;255;142;236m",
+      "format": "{name} ({cores-physical}/{cores-logical}) @ {freq-base} ({temperature})",
+      "temp": true
+    },
+    {
+      "type": "gpu",
+      "keyIcon": "\u001b[38;2;158;120;255m├─󰾲\u001b[38;2;255;142;236m",
+      "format": "{name} ({core-count}) @ {frequency} ({temperature})",
+      "temp": true,
+      "driverSpecific": true
+    },
+    {
+      "type": "memory",
+      "keyIcon": "\u001b[38;2;158;120;255m├─\u001b[38;2;255;142;236m",
+      "format": "{used} / {total} ({percentage})"
+    },
+    {
+      "type": "disk",
+      "keyIcon": "\u001b[38;2;158;120;255m├─\u001b[38;2;255;142;236m",
+      "format": "{size-used} / {size-total} ({size-percentage})"
+    },
+    {
+      "type": "diskio",
+      "key": "Disk IO (r/w)",
+      "keyIcon": "\u001b[38;2;158;120;255m├─󰓅\u001b[38;2;255;142;236m",
+      "format": "{size-read} / {size-written}",
+      "detectTotal": true
+    },
+    {
+      "type": "custom",
+      "format": "╰───────────────────────────────────────────────────────╯",
+      "outputColor": "38;2;158;120;255"
+    },
+    {
+      "type": "custom",
+      "format": "╭──────────────────── Other ────────────────────────────╮",
+      "outputColor": "38;2;158;120;255"
+    },
+    {
+      "type": "localip",
+      "key": "Local IP:",
+      "keyIcon": "\u001b[38;2;158;120;255m├─󰩟\u001b[38;2;255;142;236m",
+      "format": "{1} ({ifname})"
+    },
+    {
+      "type": "locale",
+      "keyIcon": "\u001b[38;2;158;120;255m├─\u001b[38;2;255;142;236m"
+    },
+    {
+      "type": "custom",
+      "format": "╰───────────────────────────────────────────────────────╯",
+      "outputColor": "38;2;158;120;255"
+    }
+  ],
+  "display": {
+    "color": {
+      "keys": "38;2;255;142;236",
+      "separator": "37;1;255;0;0",
+      "output": "38;2;158;158;255"
+    },
+    "key": {
+      "type": "both"
+    },
+    "separator": " ||> ",
+    "percent": {
+      "color": {
+        "green": "38;2;255;142;236",
+        "yellow": "light_blue",
+        "red": "38;2;158;158;255"
+      }
+    },
+    "temp": {
+      "color": {
+        "green": "38;2;255;142;236",
+        "yellow": "light_blue",
+        "red": "38;2;158;158;255"
+      }
+    }
+  }
+}
