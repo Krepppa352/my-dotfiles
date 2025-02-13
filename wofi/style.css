@@ -1,0 +1,14 @@
+.entry {
+    background-color: #2d2d2d;
+}
+#window {
+    background-color: #2d2d2d;
+}
+#text {
+    margin-left: 30px;
+    color: #9e9eff;
+}
+#entry:selected {
+    border-style: solid;
+    border-color: #9e9eff;
+}

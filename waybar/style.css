@@ -1,11 +1,11 @@
 * {
-    font-family: "JetBrains Mono", "Font Awesome 6 Free", "Nerd Fonts";
-    font-size: 17px;
+    font-family: "JetBrains Mono", "FontAwesome";
+    font-size: 14px;
     font-weight: 500;
 }
 
 window#waybar {
-    background-color: rgba(69, 69, 69, 0);
+    background-color: rgba(255, 142, 236, 0.35);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -16,78 +16,11 @@ window#waybar {
 window#waybar.hidden {
     opacity: 0.2;
 }
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #ffffff;
-}
-
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
 #mode {
     background-color: #64727D;
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#clock {
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgba(00, 255, 153, 238);
-    border-radius: 12px;
-    padding-top: 3px;
-    padding-left: 6px;
-    padding-right: 6px;
-    margin-top: 10px;
-}
 #battery,
 #cpu,
 #memory,
@@ -95,7 +28,6 @@ button:hover {
 #temperature,
 #backlight,
 #network,
-#pulseaudio,
 #wireplumber,
 #custom-media,
 #tray,
@@ -107,35 +39,6 @@ button:hover {
     padding: 0 10px;
     color: #ffffff;
 }
-
-#window,
-#workspaces {
-    margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-#clock {
-    background-color: black;
-    color: #9E9EFF;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #FF8EEC;
-    border-radius: 12px;
-    padding-top: 3px;
-    padding-left: 6px;
-    padding-right: 6px;
-    margin-top: 10px;
-}
-
 #battery {
     background-color: #ffffff;
     color: #000000;
@@ -145,14 +48,6 @@ button:hover {
     color: #ffffff;
     background-color: #26A65B;
 }
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
@@ -344,28 +239,50 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+
+
+
+#custom-shut-down {
+    background-color: #2d2d2d;
+    color: #9e9eff;
+    border-radius: 10px;
+    margin: 8px;
+    padding: 3px 8px 3px;
+}
+#custom-lock-screen {
+    background-color: #2d2d2d;
+    color: #9e9eff;
+    border-radius: 10px;
+    margin: 8px;
+    padding: 3px 8px 3px;
+}
 #custom-cpu {
-    background-color: black;
-    color: #9E9EFF;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #FF8EEC;
-    border-radius: 12px;
-    padding-top: 3px;
-    padding-left: 6px;
-    padding-right: 6px;
-    margin-top: 10px;
+    background-color: #2d2d2d;
+    color: #9e9eff;
+    border-radius: 10px;
+    margin: 8px;
+    padding: 3px 8px 3px;
 }
 #custom-gpu {
-    background-color: black;
-    color: #9E9EFF;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #FF8EEC;
-    border-radius: 12px;
-    padding-top: 3px;
-    padding-left: 6px;
-    padding-right: 6px;
-    margin-top: 10px;
+    background-color: #2d2d2d;
+    color: #9e9eff;
+    border-radius: 10px;
+    margin: 8px;
+    padding: 3px 8px 3px;
+}
+#clock {
+    font-size: 16px;
+    background-color: #2d2d2d;
+    color: #9e9eff;
+    border-radius: 10px;
+    margin: 8px;
+    padding: 3px 8px 3px;
+}
+#pulseaudio {
+    background-color: #2d2d2d;
+    color: #9e9eff;
+    border-radius: 10px;
+    margin: 8px;
+    padding: 3px 8px 3px;
 }
 /*Hyprland Gradient: linear-gradient(to bottom right, rgba(51, 204, 255, 238), rgba(00, 255, 153, 238))*/

@@ -2,21 +2,21 @@
 {
     "layer": "top",
     "output": ["HDMI-A-2"],
-    "height": 40, // Waybar height (to be removed for auto height)
-    "width": 1902, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "height": 35, // Waybar height (to be removed for auto height)
+    "width": 1920, // Waybar width
+    "spacing": 3, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces"
+        "custom/shut-down",
+        "custom/lock-screen"
     ],
     "modules-center": [
-        "custom/cpu",
-        "custom/gpu",
-        "custom/memory"
+        "clock"
     ],
     "modules-right": [
-        "custom/hardware",
-        "clock"
+        "pulseaudio",
+        "custom/cpu",
+        "custom/gpu"
     ],
     "idle_inhibitor": {
         "format": "{icon}",
@@ -30,7 +30,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%H:%M \/ %d.%m.%Y}"
+        "format": "{:%H:%M | %d.%m.%Y}"
     },
     "cpu": {
         "format": "{usage}% {}",
@@ -64,7 +64,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "volume {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -106,15 +106,25 @@
 		}
     },
     "custom/cpu": {
-        "exec": "echo $(cat ~/.dotfiles/scripts/env/CPU_USAGE) / $(cat ~/.dotfiles/scripts/env/CPU_DIE_TEMP)",
-        "format": "CPU: {}",
+        "exec": "bash ~/.dotfiles/scripts/cpu-info.sh",
+        "format": "cpu {}",
         "interval": 1,
         "height": 35
     },
     "custom/gpu": {
-        "exec": "echo $(cat ~/.dotfiles/scripts/env/GPU_USAGE) / $(cat ~/.dotfiles/scripts/env/GPU_EDGE_TEMP)",
-        "format": "GPU: {}",
+        "exec": "bash ~/.dotfiles/scripts/gpu-info.sh",
+        "format": "gpu {}",
         "interval": 1,
         "height": 35
+    },
+    "custom/lock-screen": {
+        "format": "lock screen",
+        "on-click": "hyprlock --config ~/.dotfiles/hypr/hyprlock.conf",
+        "tooltip": false
+    },
+    "custom/shut-down": {
+        "format": "shut down",
+        "on-click": "shutdown now",
+        "tooltip": false
     }
 }
