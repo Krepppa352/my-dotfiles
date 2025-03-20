@@ -3,3 +3,4 @@ waybar --config ~/.dotfiles/waybar/config.jsonc --style ~/.dotfiles/waybar/style
 hyprpaper --config ~/.dotfiles/hypr/hyprpaper.conf &
 openrgb &
 sleep 1 && hyprctl dispatch focusmonitor HDMI-A-2
+play -n synth sin 7
